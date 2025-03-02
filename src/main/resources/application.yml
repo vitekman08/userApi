@@ -15,6 +15,11 @@ spring:
     drop-first: false
     change-log: classpath:db/changelog/db.changelog-main.yml
     default-schema: public
+springdoc:
+  api-docs:
+    path: /api/v1
+  swagger-ui:
+    path: /api/v1/doc
 
 logging:
   level:

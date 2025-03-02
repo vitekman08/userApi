@@ -2,6 +2,7 @@ package com.user.subscriptions.apiuser.controllers;
 
 import com.user.subscriptions.apiuser.dto.SubscriptionDto;
 import com.user.subscriptions.apiuser.service.SubscriptionService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,7 @@ public class TopSubscriptionController {
      * Получает ТОП-3 подписки для всех пользователей.
      */
     @GetMapping("/top")
+    @Operation(summary = "Получает ТОП-3 подписки для всех пользователей.")
     public List<String> getTop3Subscriptions() {
         return subscriptionService.getTop3Subscriptions();
     }

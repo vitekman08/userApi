@@ -32,9 +32,11 @@ public class UserService {
 
     public UserDto updateUser(Long id, UserDto userDto) {
         User user = userRepository.findById(id).orElseThrow( () -> new UserNotFoundException("User not found"));
+
         user.setFirstName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());
         user.setEmail(userDto.getEmail());
+
         User updateUser = userRepository.save(user);
         return userMapper.toUserDto(updateUser);
     }
