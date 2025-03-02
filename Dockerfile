@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY /target/*.jar app.jar
 
-ENV TZ=Europe/Moscow
-
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
